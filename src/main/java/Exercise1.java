@@ -38,7 +38,14 @@ public class Exercise1 {
                 empty = true;
             }
         }
-
+  // added check for repeating numbers back in
+        if(number == true) {
+           if(repeatingNumbers(p) == true) {
+               number = true;
+           } else {
+               number = false;
+           }
+        }
 
 
         if ((number == true) && (upper == true) && (lower == true) && (special == true) && (empty == false)) {
@@ -54,5 +61,9 @@ public class Exercise1 {
             System.out.println("Password not strong enough");
             return false;
         }
+    }
+  // added check for repeating numbers back in (regex doesn´t work right, first test keeps failing)
+    public static boolean repeatingNumbers(String p) {
+     return   p.matches("(?=.*([0-9](.)\\1\\1\\1))");
     }
 }

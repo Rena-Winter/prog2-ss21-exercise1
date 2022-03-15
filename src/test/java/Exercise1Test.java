@@ -86,6 +86,18 @@ class Excercise1Test {
         boolean actual = Exercise1.checkPassword("Abcdefgh7)");
         assertTrue(actual);
     }
+    //added tests for repeating numbers back in, since regex doesn´t work yet, first test keeps failing
+    @Test
+    void repeatingNumbers_LessThanFour() {
+        boolean actual = Exercise1.repeatingNumbers("Abcdefgh777)");
+        assertTrue(actual);
+    }
 
+
+    @Test
+    void repeatingNumbers_MoreThanFour() {
+        boolean actual = Exercise1.repeatingNumbers("Abcdefgh7777)");
+        assertFalse(actual);
+    }
 
 }
